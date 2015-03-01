@@ -1,0 +1,5 @@
+language: objective-c
+
+script:
+  - xctool -project Pinniculum.xcodeproj -scheme "Pinniculum" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -project Pinniculum.xcodeproj -scheme "Pinniculum" -destination 'platform=iOS Simulator,name=iPhone 6' test
