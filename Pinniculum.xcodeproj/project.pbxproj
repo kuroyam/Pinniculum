@@ -10,6 +10,8 @@
 		498B38B91AA20B7500B9F92C /* Pinniculum.h in Headers */ = {isa = PBXBuildFile; fileRef = 498B38B81AA20B7500B9F92C /* Pinniculum.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		498B38BF1AA20B7500B9F92C /* Pinniculum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498B38B31AA20B7500B9F92C /* Pinniculum.framework */; };
 		498B38C61AA20B7500B9F92C /* PinniculumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B38C51AA20B7500B9F92C /* PinniculumTests.swift */; };
+		498B38D01AA20C6A00B9F92C /* Pinniculum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B38CF1AA20C6A00B9F92C /* Pinniculum.swift */; };
+		498B38D11AA20C6A00B9F92C /* Pinniculum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B38CF1AA20C6A00B9F92C /* Pinniculum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		498B38BE1AA20B7500B9F92C /* PinniculumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinniculumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		498B38C41AA20B7500B9F92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498B38C51AA20B7500B9F92C /* PinniculumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinniculumTests.swift; sourceTree = "<group>"; };
+		498B38CF1AA20C6A00B9F92C /* Pinniculum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinniculum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				498B38B81AA20B7500B9F92C /* Pinniculum.h */,
+				498B38CF1AA20C6A00B9F92C /* Pinniculum.swift */,
 				498B38B61AA20B7500B9F92C /* Supporting Files */,
 			);
 			path = Pinniculum;
@@ -209,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498B38D01AA20C6A00B9F92C /* Pinniculum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				498B38C61AA20B7500B9F92C /* PinniculumTests.swift in Sources */,
+				498B38D11AA20C6A00B9F92C /* Pinniculum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +325,7 @@
 		498B38CA1AA20B7500B9F92C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +335,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		498B38CB1AA20B7500B9F92C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

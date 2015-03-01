@@ -11,26 +11,14 @@ import XCTest
 
 class PinniculumTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testFont() {
+        let string = Pinniculum().text("font").font(UIFont(name: "Helvetica", size: 14)!).build()
+        var range : NSRange? = NSMakeRange(0, string.length)
+        let attribute : UIFont = string.attribute(NSFontAttributeName, atIndex: 0, effectiveRange: &range!) as UIFont
+        
+        XCTAssertNotNil(attribute, "attribute should not nil")
+        XCTAssert(attribute.familyName == "Helvetica", "font family name should Helvetica")
+        XCTAssert(attribute.pointSize == 14.0, "font size should 14pt")
     }
     
 }
