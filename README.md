@@ -1,0 +1,3 @@
+# Pinniculum
+
+Simple NSAttributedString builder.
