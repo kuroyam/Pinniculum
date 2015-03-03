@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Pinniculum {
+public class Pinniculum {
     
     var strings: Array<NSMutableAttributedString> = []
     var styles: Array<NSMutableParagraphStyle> = []
@@ -17,7 +17,7 @@ class Pinniculum {
         
     }
     
-    func text(text: NSString) -> Pinniculum {
+    public func text(text: NSString) -> Pinniculum {
         var string = NSMutableAttributedString(string: text)
         strings += [string]
         
@@ -27,32 +27,32 @@ class Pinniculum {
         return self
     }
     
-    func font(font: UIFont) -> Pinniculum {
+    public func font(font: UIFont) -> Pinniculum {
         strings.last!.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(0, strings.last!.length))
         return self
     }
     
-    func color(color: UIColor) -> Pinniculum {
+    public func color(color: UIColor) -> Pinniculum {
         strings.last!.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, strings.last!.length))
         return self
     }
     
-    func backgroundColor(color: UIColor) -> Pinniculum {
+    public func backgroundColor(color: UIColor) -> Pinniculum {
         strings.last!.addAttribute(NSBackgroundColorAttributeName, value: color, range: NSMakeRange(0, strings.last!.length))
         return self
     }
     
-    func kern(offset: Float) -> Pinniculum {
+    public func kern(offset: Float) -> Pinniculum {
         strings.last!.addAttribute(NSKernAttributeName, value: NSNumber(float: offset), range: NSMakeRange(0, strings.last!.length))
         return self
     }
     
-    func align(alignment: NSTextAlignment) -> Pinniculum {
+    public func align(alignment: NSTextAlignment) -> Pinniculum {
         styles.last!.alignment = alignment
         return self
     }
     
-    func build() -> NSAttributedString {
+    public func build() -> NSAttributedString {
         var result = NSMutableAttributedString()
         for var i = 0; i < strings.count; i++ {
             strings[i].addAttribute(NSParagraphStyleAttributeName, value: styles[i], range: NSMakeRange(0, strings[i].length))
