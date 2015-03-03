@@ -13,7 +13,7 @@ public class Pinniculum {
     var strings: Array<NSMutableAttributedString> = []
     var styles: Array<NSMutableParagraphStyle> = []
     
-    init() {
+    public init() {
         
     }
     
