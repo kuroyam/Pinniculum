@@ -404,6 +404,7 @@
 				498B38CB1AA20B7500B9F92C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		498B38CC1AA20B7500B9F92C /* Build configuration list for PBXNativeTarget "PinniculumTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +413,7 @@
 				498B38CE1AA20B7500B9F92C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
