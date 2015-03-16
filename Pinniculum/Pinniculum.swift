@@ -11,7 +11,7 @@ import UIKit
 public class Pinniculum {
     
     var strings: Array<NSMutableAttributedString> = []
-    var styles: Array<NSMutableParagraphStyle> = []
+    var style: NSMutableParagraphStyle = NSMutableParagraphStyle()
     
     public init() {
         
@@ -20,10 +20,6 @@ public class Pinniculum {
     public func text(text: NSString) -> Pinniculum {
         var string = NSMutableAttributedString(string: text)
         strings += [string]
-        
-        var style = NSMutableParagraphStyle()
-        styles += [style]
-        
         return self
     }
     
@@ -48,16 +44,16 @@ public class Pinniculum {
     }
     
     public func align(alignment: NSTextAlignment) -> Pinniculum {
-        styles.last!.alignment = alignment
+        style.alignment = alignment
         return self
     }
     
     public func build() -> NSAttributedString {
         var result = NSMutableAttributedString()
         for var i = 0; i < strings.count; i++ {
-            strings[i].addAttribute(NSParagraphStyleAttributeName, value: styles[i], range: NSMakeRange(0, strings[i].length))
             result.appendAttributedString(strings[i])
         }
+        result.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, result.length))
         return result
     }
     
